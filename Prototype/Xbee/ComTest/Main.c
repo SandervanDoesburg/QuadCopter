@@ -23,7 +23,7 @@ int main(void)
 	clock_init32MCalibrate();
 	
 	// Init uart D0 and set stdout
-	initUartD0(F_CPU, 115200, 0);
+	initUartD0(F_CPU, 9600, 0);
 	stdout = &uartStdOut;
 	
 	TWI_MasterInit(&twiMaster, &TWIC, TWI_MASTER_INTLVL_LO_gc, TWI_BAUD(F_CPU, MPU_TWI_RATE));
@@ -47,9 +47,9 @@ int main(void)
 		getRotation9150(&gx, &gy, &gz);
 		getCompass9150(&mx, &my, &mz);
 		
-		printf("%d,%d,ax\r\n", RTC.CNT, ax);
+		printf("%d,%d,%d\r\n", ax, ay, az);
 		
 		PORTE.OUTTGL = PIN0_bm; // We are still alive indicator
-        _delay_ms(50);
+        _delay_ms(20);
     }
 }

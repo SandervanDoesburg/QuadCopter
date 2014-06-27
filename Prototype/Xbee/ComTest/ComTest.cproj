@@ -99,7 +99,7 @@
         <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
       </AvrGcc>
     </ToolchainSettings>
-    <PostBuildEvent>"C:\Program Files\Atmel\Flip 3.4.7\bin\batchisp.exe" -device ATxmega128A4U -hardware usb -operation ERASE F LOADBUFFER "$(OutputDirectory)\$(OutputFileName).hex" PROGRAM VERIFY START RESET 0</PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Atmel\Flip 3.4.7\bin\batchisp.exe" -device ATxmega128A4U -hardware usb -operation ERASE F LOADBUFFER "$(OutputDirectory)\$(OutputFileName).hex" PROGRAM VERIFY START RESET 0</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="libs\Mpu9150.c">
